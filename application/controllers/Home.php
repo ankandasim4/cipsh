@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+use Platformsh\ConfigReader\Config;
 class Home extends CI_Controller {
 
 	/**
@@ -25,5 +25,14 @@ class Home extends CI_Controller {
 		$this->load->helper('url');
 		$emp_list['emp_list'] = $this->employees->get_employees();
 		$this->load->view('home.php', $emp_list);
+	}
+	public function test(){
+		echo $credentials['host'];
+		echo "</br>";
+		echo $credentials['username'];
+		echo "</br>";
+		echo $credentials['password'];
+		echo "</br>";
+		echo $credentials['path'];
 	}
 }
