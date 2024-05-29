@@ -1,0 +1,19 @@
+# .platform.app.yaml
+name: app  # Adjust the name if needed
+type: php:7.4  # Adjust the PHP version as needed
+
+build:
+    flavor: composer
+
+web:
+    locations:
+        "/":
+            root: "public"
+            passthru: "/index.php"
+
+hooks:
+    build: |
+        composer install --no-dev --prefer-dist
+
+relationships:
+    database: mysql:mysql  # Assuming your database name is 'mysql'
