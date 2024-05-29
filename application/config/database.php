@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 use Platformsh\ConfigReader\Config;
 
 $active_group = 'default';
-$query_builder = TRUE;
+$query_builder = TRUE; 
 
 $config = new Config();
 
